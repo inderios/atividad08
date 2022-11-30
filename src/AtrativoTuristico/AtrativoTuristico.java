@@ -1,5 +1,7 @@
 package AtrativoTuristico;
 
+import java.util.Objects;
+
 public class AtrativoTuristico {
     String nome;
     double latitude;
@@ -56,5 +58,5 @@ public class AtrativoTuristico {
     public String getEstado() {
         return this.estado;
     }
-    //TODO has code e equals, fazer.
+    //TODO hascode e equals, fazer.
 }
