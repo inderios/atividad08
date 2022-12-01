@@ -17,8 +17,6 @@ public class Praia extends AtrativoTuristico{
     public Praia() {
         this("", 0, 0,"", "","", false, true, "");
     }
-    // Todo build
-    //set
     public void setPropriaParaBanho (boolean propriaParaBanho) {
         this.propriaParaBanho = propriaParaBanho;
     }
@@ -28,7 +26,6 @@ public class Praia extends AtrativoTuristico{
     public void setTipoOrla (String tipoOrla) {
         this.tipoOrla = tipoOrla;
     }
-    //get
     public boolean getPropriaParaBanho() {
         return this.propriaParaBanho;
     }

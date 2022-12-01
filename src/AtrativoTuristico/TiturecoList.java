@@ -10,5 +10,19 @@ public class TiturecoList {
     }
     public boolean cadastrarAtrativo(AtrativoTuristico atrativo) {
     }
-    public boolean apagarAtrativo(String nomeAtrativo, String cidade)
+    public boolean apagarAtrativo(String nomeAtrativo, String cidade){
+
+    }
+    public List<AtrativoTuristico> getAtrativos(){
+        return atrativos;
+    }
+    public List<AtrativoTuristico> pesquisarAtrativosDaCidade(String cidade, String estado) {
+        List atrativosDaCidade = new ArrayList<>();
+        for (AtrativoTuristico c: atrativos) {
+            if (c.getCidade().equals(cidade) && c.getEstado().equals(estado)) {
+                atrativosDaCidade.add(c);
+            }
+        }
+        return atrativosDaCidade;
+    }
 }
