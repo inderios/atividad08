@@ -1,12 +1,12 @@
-package AtrativoTuristico;
+package titureco;
 
 public class Praia extends AtrativoTuristico{
-    boolean propriaParaBanho;
-    boolean perigoTubarao;
-    String tipoOrla;
-    final String TIPO_PISCINAS_NATURAIS = "Piscinas Naturais";
-    final String TIPO_ONDAS_FORTES = "Ondas fortes";
-    final String TIPO_ONDAS_MEDIAS = "Ondas médias";
+    private boolean propriaParaBanho;
+    private boolean perigoTubarao;
+    private String tipoOrla;
+    public final static String TIPO_PISCINAS_NATURAIS = "Piscinas Naturais";
+    public final static String TIPO_ONDAS_FORTES = "Ondas fortes";
+    public final static String TIPO_ONDAS_MEDIAS = "Ondas médias";
     public Praia(String nome, double latitude, double longitude,String comoChegar, String cidade, String estado,
                  boolean propriaParaBanho, boolean perigoTubarao, String tipoOrla){
         super(nome, latitude, longitude, comoChegar, cidade, estado);
@@ -15,12 +15,13 @@ public class Praia extends AtrativoTuristico{
         this.tipoOrla = tipoOrla;
     }
     public Praia() {
-        this("", 0, 0,"", "","", false, true, "");
+        this("", 0, 0,"", "","", false,
+                true, TIPO_ONDAS_FORTES);
     }
     public void setPropriaParaBanho (boolean propriaParaBanho) {
         this.propriaParaBanho = propriaParaBanho;
     }
-    public void setPerigoTubarao (boolean PerigoTubarao) {
+    public void setPerigoTubarao (boolean perigoTubarao) {
         this.perigoTubarao = perigoTubarao;
     }
     public void setTipoOrla (String tipoOrla) {
@@ -35,4 +36,23 @@ public class Praia extends AtrativoTuristico{
     public String getTipoOrla() {
         return this.tipoOrla;
     }
+
+    @Override
+    public String toString() {
+        return "Praia{" +
+                "propriaParaBanho=" + propriaParaBanho +
+                ", perigoTubarao=" + perigoTubarao +
+                ", tipoOrla='" + tipoOrla + '\'' +
+                '}';
+    }
+
+    public boolean temPerigoTubarao() {
+        return this.perigoTubarao;
+    }
+
+    public boolean ehPropriaParaBanho() {
+        return this.propriaParaBanho;
+    }
+
+
 }

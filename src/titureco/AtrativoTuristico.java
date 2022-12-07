@@ -1,4 +1,4 @@
-package AtrativoTuristico;
+package titureco;
 
 import java.util.Objects;
 
@@ -37,7 +37,7 @@ public class AtrativoTuristico {
         this.cidade = cidade;
     }
     public void setEstado (String estado) {
-        this.cidade = cidade;
+        this.estado = estado;
     }
     //get
     public String getNome() {
@@ -58,5 +58,29 @@ public class AtrativoTuristico {
     public String getEstado() {
         return this.estado;
     }
-    //TODO hascode e equals, fazer.
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AtrativoTuristico that = (AtrativoTuristico) o;
+        return Objects.equals(nome, that.nome) && Objects.equals(cidade, that.cidade) && Objects.equals(estado, that.estado);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, cidade, estado);
+    }
+
+    @Override
+    public String toString() {
+        return "AtrativoTuristico{" +
+                "nome='" + nome + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", comoChegar='" + comoChegar + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", estado='" + estado + '\'' +
+                '}';
+    }
 }
